@@ -1,59 +1,50 @@
-
 # Docs
 
 ### Save People
+Endpoint:
 
     /person
 
-Example Request Body
+Example Request Body:
 ```json
 [
     {
-        "name": "Name 1",
-        "postalCode": "001"
+        "name": "Ard",
+        "postalCode": "6000"
     },
     {
-        "name": "Name 2",
-        "postalCode": "002"
+        "name": "Iris",
+        "postalCode": "6001"
     },
     {
-        "name": "Name 3",
-        "postalCode": "003"
-    },
-    {
-        "name": "Name 10",
-        "postalCode": "010"
+        "name": "Nick",
+        "postalCode": "6002"
     }
 ]
 ```
 
 ### Get People by Postal Code Range
+Endpoint:
 
-Example Response Body
+    /person/postal-code-range?from={from}&to={to}
+
+Example Endpoint:
+
+    /person/postal-code-range?from=6001&to=6002
+    
+Example Response:
 ```json
 {
     "people": [
         {
-            "id": 1,
-            "name": "Name 1",
-            "postalCode": "001"
+            "name": "Iris",
+            "postalCode": "6001"
         },
         {
-            "id": 4,
-            "name": "Name 10",
-            "postalCode": "010"
-        },
-        {
-            "id": 2,
-            "name": "Name 2",
-            "postalCode": "002"
-        },
-        {
-            "id": 3,
-            "name": "Name 3",
-            "postalCode": "003"
+            "name": "Nick",
+            "postalCode": "6002"
         }
     ],
-    "totalNamesChars": 25
+    "totalNamesChars": 8
 }
 ```
